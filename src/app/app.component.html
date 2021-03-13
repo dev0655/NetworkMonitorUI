@@ -1,0 +1,89 @@
+
+
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+  <a class="navbar-brand navbar-logo" href="#">Network Monitor</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <i class="fas fa-bars text-white"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+          <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+          <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+          </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="javascript:void(0);"><i class="far fa-address-book"></i>Address Book</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);"><i class="far fa-clone"></i>Components</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);"><i class="far fa-calendar-alt"></i>Calendar</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);"><i class="far fa-chart-bar"></i>Charts</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);"><i class="far fa-copy"></i>Documents</a>
+          </li>
+      </ul>
+  </div>
+</nav>
+
+<div class="p-3 mb-2 bg-dark text-white">
+
+  <div class="row">
+    <div class="col-sm-8">
+      <table class="table table-hover table-striped table-sm table-bordered table-dark" align="center">
+        <thead >
+          <tr style="color:white); font-size: large;">
+            <th width="15%" > HostName</th>
+            <th width="10%" > Status</th>
+            <th width="15%" > Action</th>
+            <th width="50%" > Output</th>
+          </tr>
+  
+          </thead>
+          
+        <tbody>
+        <!--add: user selection => edit field -->
+        <tr *ngFor="let u of users" >
+          <td style="font-size: large;">{{u.hostName}}</td>
+          <td  *ngIf="u.success==='offline'" style="color: red;">{{u.success}}</td>
+          <td  *ngIf="u.success==='online'" style="color: green;">{{u.success}}</td>
+          <td *ngIf="u.success==='online'"><button class="btn btn-outline-primary p-2" (click)="getIptables(u.hostName)">Iptables</button></td>
+          <td *ngIf="u.success==='online'" style="color:white;"> <tr *ngFor="let ip of iptables" >{{ip}}</tr></td>
+        </tr>
+        
+        </tbody>
+      </table>
+    </div>
+    <!--edit panel to the right-->
+  </div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</div>
+
+<div>
+
+<footer >
+  <div class="copyright">
+    <p>&copy 2021 - Organisation</p>
+  </div>
+  <div class="social">
+    <a href="#" class="support">Contact Us</a>
+    <a href="#" class="face">f</a>
+    <a href="#" class="tweet">t</a>
+    <a href="#" class="linked">in</a>
+  </div>
+</footer>
+</div>
+
+
+
+
